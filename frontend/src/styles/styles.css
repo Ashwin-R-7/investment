@@ -1,0 +1,346 @@
+/* === Reset and Base === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #222831;
+  color: #DFD0B8;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* === Shared Form Container === */
+form {
+  background-color: #393E46;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  width: 320px;
+  margin: 1rem auto;
+}
+
+h2, h3 {
+  text-align: center;
+  margin-bottom: 1.2rem;
+  color: #DFD0B8;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.6rem 0;
+  border: 1px solid #948979;
+  border-radius: 6px;
+  background-color: #222831;
+  color: #DFD0B8;
+}
+
+input::placeholder {
+  color: #948979;
+}
+
+/* === Buttons === */
+button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  background-color: #948979;
+  color: #222831;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #DFD0B8;
+}
+
+/* === App Level Buttons (like toggle login/signup) === */
+.app > button {
+  margin-top: 1rem;
+  background: none;
+  border: 1px solid #948979;
+  color: #DFD0B8;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.app > button:hover {
+  background-color: #393E46;
+}
+
+/* === Stock Dashboard === */
+.stock-dashboard {
+  padding: 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.stock-dashboard h2 {
+  margin-bottom: 1.5rem;
+  color: #DFD0B8;
+}
+
+.stock-dashboard .small-text {
+  color: #948979;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+/* === Stock Detail === */
+.stock-detail {
+  background-color: #393E46;
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 1rem 0;
+  color: #DFD0B8;
+}
+
+.stock-detail input {
+  background-color: #222831;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.btn-group button {
+  width: 48%;
+  background-color: #948979;
+}
+
+.btn-group button:hover {
+  background-color: #DFD0B8;
+}
+
+/* === Owned Stocks List === */
+.stock-list {
+  list-style: none;
+  margin-top: 1rem;
+  padding-left: 0;
+  background-color: #222831;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.stock-list li {
+  padding: 0.6rem;
+  border-bottom: 1px solid #948979;
+}
+
+.stock-list li:last-child {
+  border-bottom: none;
+}
+
+/* === Payment Page === */
+.payment-page {
+  background-color: #393E46;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 360px;
+  margin: 2rem auto;
+}
+
+.payment-page input {
+  background-color: #222831;
+}
+
+.payment-page button {
+  background-color: #948979;
+}
+
+.payment-page button:hover {
+  background-color: #DFD0B8;
+}
+
+/* === Stock Grid === */
+.stock-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.stock-card {
+  background-color: #393E46;
+  color: #DFD0B8;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid #948979;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.stock-card:hover {
+  transform: translateY(-5px);
+  border-color: #DFD0B8;
+}
+
+/* === Modal Styles === */
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(34, 40, 49, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #393E46;
+  padding: 3rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  color: #DFD0B8;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.buy-button,
+.sell-button {
+  padding: 0.75rem;
+  width: 48%;
+  background-color: #948979;
+  color: #222831;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+  background-color: #DFD0B8;
+}
+
+.sell-button:hover {
+  background-color: #FF6347; /* Red color for Sell */
+}
+
+.close-button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #948979;
+  color: #222831;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background-color: #DFD0B8;
+}
+
+/* === Modal Button Styling */
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.modal-actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modal-actions button:hover {
+  opacity: 0.9;
+}
+
+/* === Stock Hover Details === */
+.stock-hover-details {
+  display: none;
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+
+.stock-card:hover .stock-hover-details {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+.dashboard-message {
+  background-color: #f1f1f1;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  color: #333;
+}
+.payment-container {
+  background-color: #333; /* Dark background from the palette */
+  color: #fff; /* Ensure text is readable */
+  border: 2px solid #555; /* Slightly lighter border for contrast */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+  padding: 40px;
+  margin: 50px auto;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 12px;
+}
+
+
+
+.payment-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid transparent;
+  background-color:  #444; /* Use inherited color scheme */
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.payment-container button {
+  background-color: #f0f0f0; /* light color from palette */
+  color: #333; /* dark text for contrast */
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.payment-container button:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: 1px solid #999;
+}
